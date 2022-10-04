@@ -31,3 +31,43 @@ export const generateUUID = () => {
   });
   return uuid;
 }
+
+export const generateModle = (genList) => {
+    for (let i = 0; i < genList.length; i++) {
+      if (genList[i].type === 'grid') {
+        genList[i].columns.forEach(item => {
+          this.generateModle(item.list)
+        })
+      } else {
+        if (this.value && Object.keys(this.value).indexOf(genList[i].model) >= 0) {
+          this.models[genList[i].model] = this.value[genList[i].model]
+        } else {
+          if (genList[i].type === 'blank') {
+            this.$set(this.models, genList[i].model, genList[i].options.defaultType === 'String' ? '' : (genList[i].options.defaultType === 'Object' ? {} : []))
+          } else {
+            this.models[genList[i].model] = genList[i].options.defaultValue
+          }      
+        }
+        
+        if (this.rules[genList[i].model]) {
+          
+          this.rules[genList[i].model] = [...this.rules[genList[i].model], ...genList[i].rules.map(item => {
+            if (item.pattern) {
+              return {...item, pattern: new RegExp(item.pattern)}
+            } else {
+              return {...item}
+            }
+          })]
+        } else {
+          
+          this.rules[genList[i].model] = [...genList[i].rules.map(item => {
+            if (item.pattern) {
+              return {...item, pattern: new RegExp(item.pattern)}
+            } else {
+              return {...item}
+            }
+          })]
+        }      
+      }
+    }
+};

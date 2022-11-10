@@ -205,7 +205,7 @@
 </template>
 
 <script>
-import FmUpload from './Upload'
+import FmUpload from './Upload/index.vue'
 export default {
   props: ['element', 'select', 'index', 'data'],
   components: {

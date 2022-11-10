@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <div class="fm-header">
+    hello from vite
+    <!-- <div class="fm-header">
       <img class="fm-logo" src="./assets/logo.png">
       <div class="fm-title" @click="handleHome">{{$t('header.title')}}</div>
 
@@ -28,24 +29,23 @@
         </div>
       </div>
     </div>
-    <div  class="fm-container"><router-view/></div>
+    <div  class="fm-container"><router-view/></div> -->
   </div>
 </template>
 
 <script>
-import Vue from 'vue'
 
 export default {
-  name: 'app',
-  methods: {
-    handleHome () {
-      this.$router.push({path: '/'})
-    },
+  // name: 'app',
+  // methods: {
+  //   handleHome () {
+  //     this.$router.push({path: '/'})
+  //   },
 
-    handleLangCommand (command) {
-      this.$router.replace({name: this.$route.name, params: {lang: command}})
-    }
-  }
+  //   handleLangCommand (command) {
+  //     this.$router.replace({name: this.$route.name, params: {lang: command}})
+  //   }
+  // }
 }
 </script>
 

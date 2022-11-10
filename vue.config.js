@@ -20,5 +20,22 @@ module.exports = {
     if (process.env.NODE_ENV !== 'development') {
       config.plugins = [...config.plugins, ...plugins]
     }
+  },
+  chainWebpack: (config) => {
+    config.resolve.alias.set('vue', '@vue/compat')
+
+    config.module
+      .rule('vue')
+      .use('vue-loader')
+      .tap((options) => {
+        return {
+          ...options,
+          compilerOptions: {
+            compatConfig: {
+              MODE: 2
+            }
+          }
+        }
+      })
   }
 }

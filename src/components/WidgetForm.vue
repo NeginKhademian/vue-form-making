@@ -67,7 +67,7 @@
 
 <script>
 import Draggable from 'vuedraggable'
-import WidgetFormItem from './WidgetFormItem'
+import WidgetFormItem from './WidgetFormItem.vue'
 
 export default {
   components: {

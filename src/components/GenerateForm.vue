@@ -1,6 +1,6 @@
 <template>
   <div class="fm-style">
-    <el-form ref="generateForm" 
+    <!-- <el-form ref="generateForm" 
       label-suffix=":"
       :size="data.config.size"
       :model="models" :rules="rules" :label-position="data.config.labelPosition" :label-width="data.config.labelWidth + 'px'">
@@ -52,12 +52,12 @@
         </template>
         
       </template>
-    </el-form>
+    </el-form> -->
   </div>
 </template>
 
 <script>
-import GenetateFormItem from './GenerateFormItem'
+import GenetateFormItem from './GenerateFormItem.vue'
 import {loadJs} from '../util/index.js'
 
 export default {

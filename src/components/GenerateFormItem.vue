@@ -210,7 +210,7 @@
 </template>
 
 <script>
-import FmUpload from './Upload'
+import FmUpload from './Upload/index.vue'
 
 export default {
   props: ['widget', 'models', 'rules', 'remote'],
